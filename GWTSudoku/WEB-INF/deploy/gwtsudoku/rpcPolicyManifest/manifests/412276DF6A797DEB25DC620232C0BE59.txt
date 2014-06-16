@@ -1,2 +1,0 @@
-serviceClass: tw.edu.ntust.csie.ai.sudoku.client.client.GreetingService
-path: D808D35B74D1FFC61A4417B3BBFA15C9.gwt.rpc
