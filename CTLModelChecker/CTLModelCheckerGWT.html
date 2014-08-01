@@ -1,0 +1,116 @@
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!--                                                               -->
+    <!-- Consider inlining CSS to reduce the number of requested files -->
+    <!--                                                               -->
+    <link type="text/css" rel="stylesheet" href="CTLModelCheckerGWT.css">
+
+    <!--                                           -->
+    <!-- Any title is fine                         -->
+    <!--                                           -->
+    <title>Yen's CTL Model Checker</title>
+    
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+    <script type="text/javascript" language="javascript" src="ctlmodelcheckergwt/ctlmodelcheckergwt.nocache.js"></script>
+  </head>
+
+  <!--                                           -->
+  <!-- The body can have arbitrary html, or      -->
+  <!-- you can leave the body empty if you want  -->
+  <!-- to create a completely dynamic UI.        -->
+  <!--                                           -->
+  <body>
+
+    <!-- OPTIONAL: include this if you want history support -->
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+    
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <h1>Yen's CTL Model Checker</h1>
+
+    <table class="main" align="center">
+      <tr>
+          <td class="label">State Transition System:
+              <div class="note">
+                  The STS must follow the format (Similar to <a href="http://en.wikipedia.org/wiki/Kripke_structure_(model_checking)"> Kripke Structure </a>): <br />
+                       { <br />
+                       {<b>&lt; state &gt;</b>,<b>&lt; state &gt;</b>, ...}, <br />
+                       <b>&lt; initial state &gt;</b>, <br />
+                       {<b>&lt; state &gt;</b> -&gt; <b>&lt; state &gt;</b>, <b>&lt; state &gt;</b> -&gt; <b>&lt; state &gt;</b>, ...}, <br />
+                       {<b>&lt; atomic symbol &gt;</b>:{<b>&lt; state &gt;</b>, <b>&lt; state &gt;</b>, <b>&lt; state &gt;</b>, ...},<b>&lt; atomic symbol &gt;</b>:{<b>&lt; state &gt;</b>, <b>&lt; state &gt;</b>, <b>&lt; state &gt;</b>, ...}, ...} <br />
+                       } <br />
+                       <p>
+                       For example: (Mutual Exclusion for 2 processes)<br />
+                       {{s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12},
+                       s0 ,
+                       {s0-&gt;s1, s1-&gt;s2, s1-&gt;s3,s2-&gt;s4, s3-&gt;s4, s3-&gt;s5, s4-&gt;s6, s5-&gt;s6, s5-&gt;s7, s6-&gt;s9, s7-&gt;s8, s7-&gt;s9, s8-&gt;s10, s9 -&gt; s10, s9-&gt;s11, s10-&gt;s12, s11-&gt;s12, s11-&gt;s1, s12-&gt;s3},
+                       { 
+                       n0:{s0, s1, s2, s7, s9, s11},
+                       n1:{s0, s1, s3, s5, s7, s8}, 
+                       w0:{s3, s4, s8, s10, s12}, 
+                       w1:{s2, s4, s6, s9, s10} , 
+                       t0:{s1, s2, s3, s4, s5, s6}, 
+                       t1:{s7,s8, s9, s10, s11, s12}, 
+                       c0:{s5, s6}, c1:{s11, s12}
+                       }
+                       }
+                       </p>
+
+              </div>
+        </td>        
+      </tr>
+      <tr>
+          <td ><span id="STSField" class="STSField"> </span> </td>
+      <tr>
+        <td class="label">
+            CTL Formula: <br />
+            <div class="note">
+                Unary Operators: AX, EX, AG, EG, AF, EF, !(not) <br />
+                Binary Operators: & (AND), | (OR), -&gt; (Condition), &lt;-&gt; (IFF), AU, EU <br />
+                You can also have parenthesis. <br />
+                For example: AF(c1&amp;EXc1)
+            </div>
+        </td>        
+      </tr>
+      <tr>
+        <td>
+            <span id="CTLField" class="CTLField"> </span> 
+            <span id="checkButton" class="checkButton" > </span>
+        </td>
+      </tr>
+      <tr>
+        <td class="errorMessage" id="errorMessage"></td>
+      </tr>
+      <tr>
+          <td>
+              <div id="result" class="result"></div>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <div id="copyright"> Shao-yen Cheng's production <br />
+                  hses83081@gmail.com
+              </div>
+          </td>
+      </tr>
+    </table>
+  </body>
+</html>

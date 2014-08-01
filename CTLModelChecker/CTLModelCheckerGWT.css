@@ -1,0 +1,86 @@
+/** Add css rules here for your application. */
+
+
+/** Example rules used by the template application (remove for your app) */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 20px;
+  text-align: center;
+}
+
+
+.errorMessage {
+  color: red;
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+#closeButton {
+  margin: 15px 6px 6px;
+}
+
+.STSField{
+    width: 100%;
+    height:200px;
+}
+
+.CTLField{
+    width: 90%;
+    float: left;
+}
+
+.note{
+    width: 100%;
+    word-break:break-word;
+    position:relative;
+    font-size: small;
+    color: gray;
+}
+
+.main{
+    width:800px;
+    height:600px;
+    font-size:larger;
+}
+
+.checkButton{
+    
+}
+
+.resultTable{
+    width:100%;
+    border: 1px solid cornflowerblue;
+    border-spacing: 0px;
+}
+
+#copyright{
+    text-align: right;
+    width:100%;
+}
+
+.resultTableFormula{
+    color:blue;
+}
+
+.resultTableState{
+    color:coral;
+}
+
+.resultTable td{
+    width:80px;
+    border: 1px solid black;
+}
+.resultTableTruth{
+    text-transform: uppercase;
+    
+    
+}
+
+.focused{
+    border: 2px solid red;
+}
+
+.True{
+    font-weight: bolder;
+}
